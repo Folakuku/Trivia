@@ -89,7 +89,7 @@ The API will return three error types when requests fail:
 - 404: Resource Not Found
 - 422: Not Processable
 
-### Endpoints
+## Endpoints
 
 #### GET /categories
 
