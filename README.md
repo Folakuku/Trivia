@@ -279,3 +279,13 @@ The API will return three error types when requests fail:
   "currentCategory": "Entertainment"
 }
 ```
+
+## Deployment N/A
+
+## Authors
+
+Yours truly, Folahanmi Ojokuku
+
+## Acknowledgements
+
+My Udacity tutors Any Hua, Coach Caryn and my session instructor Ugonna Okoli and the wonderful community of Udacity students.
