@@ -4,6 +4,8 @@
 
 This is a great trivia game designed to be played with family and friends.
 
+All backend code follows [PEP8 style guidelines](https://www.python.org/dev/peps/pep-0008/).
+
 ## Getting Started
 
 ### Install Backend Dependencies
@@ -40,6 +42,17 @@ To run the server, execute:
 
 ```bash
 flask run
+```
+
+### Tests
+
+In order to run tests navigate to the backend folder and run the following commands:
+
+```bash
+dropdb trivia_test
+createdb trivia_test
+psql trivia_test < trivia.psql
+python test_flaskr.py
 ```
 
 ### Installing Frontend Dependencies
@@ -89,7 +102,9 @@ The API will return three error types when requests fail:
 - 404: Resource Not Found
 - 422: Not Processable
 
-## Endpoints
+## API Reference
+
+### Endpoints
 
 #### GET /categories
 
