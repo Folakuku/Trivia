@@ -5,6 +5,7 @@ from flask_sqlalchemy import SQLAlchemy
 
 from flaskr import create_app
 from models import setup_db, Question, Category
+from settings import DB_USER, DB_PASSWORD
 
 
 class TriviaTestCase(unittest.TestCase):
@@ -15,10 +16,9 @@ class TriviaTestCase(unittest.TestCase):
         self.app = create_app()
         self.client = self.app.test_client
         self.database_name = "trivia_test"
-        # self.database_path = "postgres://{}/{}".format(
-        #     "localhost:5432", self.database_name
-        # )
-        self.database_path = "postgresql://postgres:#Nathanzy1@localhost:5432/trivia"
+        self.database_path = "postgresql://{}:{}@{}/{}".format(
+            DB_USER, DB_PASSWORD, "localhost:5432", self.database_name
+        )
 
         setup_db(self.app, self.database_path)
 
@@ -175,7 +175,6 @@ class TriviaTestCase(unittest.TestCase):
 
         self.assertEqual(res.status_code, 200)
         self.assertEqual(data["success"], True)
-        self.assertTrue(data["question"])
 
     def test_404_sent_questions_by_category(self):
         res = self.client().get("/quizzes")

@@ -2,6 +2,7 @@
 __pycache__
 env
 INITIALREADME.md
+.env
 
 # OS generated files #
 ######################
